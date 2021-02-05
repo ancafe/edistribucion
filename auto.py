@@ -17,7 +17,8 @@ import sys
 import json
 
 config_object = ConfigParser()
-file = os.path.dirname(__file__) + "\\config.ini"
+carpeta = os.path.dirname(os.path.realpath(__file__))
+file = carpeta + "\\config.ini"
 config_object.read(file)
 db = config_object["DATABASE"]
 
@@ -59,8 +60,8 @@ for login in rows:
         conn.commit()
         functions.readConsumo(edis, cur, conn, lstATR, cup['Name'])
 
-    fileAccess = os.path.dirname(__file__)  + '\\edistribucion.access'
-    fileSession = os.path.dirname(__file__) + '\\edistribucion.session'
+    fileAccess = carpeta  + '\\edistribucion.access'
+    fileSession = carpeta + '\\edistribucion.session'
     if os.path.exists(fileAccess):
         os.remove(fileAccess)
     if os.path.exists(fileSession):
