@@ -1,0 +1,10 @@
+[LOGIN]
+user = user
+pwd = 1234;
+
+[DATABASE]
+host = localhost
+user = user
+pwd =
+port = 3306
+database = edistribucion

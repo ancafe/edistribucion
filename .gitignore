@@ -1,0 +1,8 @@
+edistribucion.access
+edistribucion.session
+__pycache__
+*.pyc
+config.ini
+venv
+edistribucion
+.idea
