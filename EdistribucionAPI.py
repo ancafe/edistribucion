@@ -6,6 +6,7 @@ Created on Wed May 20 11:42:56 2020
 @author: trocotronic
 """
 import sys
+import os
 from datetime import datetime, timedelta
 
 import requests, pickle, json
@@ -30,8 +31,8 @@ class UrlError(EdisError):
 
 class Edistribucion():
     __session = None
-    SESSION_FILE = 'edistribucion.session'
-    ACCESS_FILE = 'edistribucion.access'
+    SESSION_FILE = os.path.dirname(__file__) + '\\edistribucion.session'
+    ACCESS_FILE = os.path.dirname(__file__) + '\\edistribucion.access'
     __token = 'undefined'
     __credentials = {}
     __dashboard = 'https://zonaprivada.edistribucion.com/areaprivada/s/sfsites/aura?'

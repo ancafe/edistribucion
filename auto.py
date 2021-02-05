@@ -16,9 +16,9 @@ import mariadb
 import sys
 import json
 
-
 config_object = ConfigParser()
-config_object.read("config.ini")
+file = os.path.dirname(__file__) + "\\config.ini"
+config_object.read(file)
 db = config_object["DATABASE"]
 
 try:
