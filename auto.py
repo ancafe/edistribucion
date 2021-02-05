@@ -59,10 +59,12 @@ for login in rows:
         conn.commit()
         functions.readConsumo(edis, cur, conn, lstATR, cup['Name'])
 
-    if os.path.exists("edistribucion.access"):
-        os.remove("edistribucion.access")
-    if os.path.exists("edistribucion.session"):
-            os.remove("edistribucion.session")
+    fileAccess = os.path.dirname(__file__)  + '\\edistribucion.access'
+    fileSession = os.path.dirname(__file__) + '\\edistribucion.session'
+    if os.path.exists(fileAccess):
+        os.remove(fileAccess)
+    if os.path.exists(fileSession):
+            os.remove(fileSession)
 
 
 conn.close()
