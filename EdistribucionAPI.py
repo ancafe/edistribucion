@@ -31,8 +31,9 @@ class UrlError(EdisError):
 
 class Edistribucion():
     __session = None
-    SESSION_FILE = os.path.dirname(__file__) + '\\edistribucion.session'
-    ACCESS_FILE = os.path.dirname(__file__) + '\\edistribucion.access'
+    carpeta = os.path.dirname(os.path.realpath(__file__))
+    SESSION_FILE = carpeta + '/edistribucion.session'
+    ACCESS_FILE = carpeta + '/edistribucion.access'
     __token = 'undefined'
     __credentials = {}
     __dashboard = 'https://zonaprivada.edistribucion.com/areaprivada/s/sfsites/aura?'
