@@ -66,7 +66,11 @@ def main():
     # Start the Bot
     updater.start_polling()
 
+<<<<<<< HEAD
     updater.bot.send_message('40197060','AUTOMATIZADO')
+=======
+    updater.bot.send_message('xxxxxxxx','AUTOMATIZADO')
+>>>>>>> 0705ac18e98bccc9f5fb00fcfd698d434ef591a9
     sys.exit(1)
 
     # Run the bot until you press Ctrl-C or the process receives SIGINT,
