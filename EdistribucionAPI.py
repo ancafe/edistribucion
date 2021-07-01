@@ -359,4 +359,13 @@ class Edistribucion():
         r = self.__command('other.WP_Measure_v3_CTRL.getChartPoints=1', post=data)
         return r['data']['lstData']
 
+    def get_measure(self, cups):
+        hoy = datetime.now()
+        ayer = hoy - timedelta(days=1)
+        ayer = ayer.strftime('%Y-%m-%d')
+        data = {
+            'message': '{"actions":[{"id":"430;a","descriptor":"apex://WP_Measure_v3_CTRL/ACTION$getChartPointsByRange","callingDescriptor":"markup://c:WP_Measure_Detail_Filter_By_Dates_v3","params":{"contId":"' + cups + '","type":"3","startDate":"' + ayer + '"},"version":null,"longRunning":true}]}',
+        }
+        r = self.__command('other.WP_Measure_v3_CTRL.getChartPointsByRange=1', post=data)
+        return r
         
